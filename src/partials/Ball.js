@@ -8,11 +8,9 @@ export default class Ball {
     this.boardHeight = boardHeight;
     this.direction = 1;
     this.ping = new Audio('public/sounds/pong-01.wav');
-
     this.reset();
   }
 
-  // resets ball at the center, randomly generates a number to throw the ball to the right
   reset() {
     this.x = this.boardWidth / 2;
     this.y = this.boardHeight / 2;
@@ -21,8 +19,6 @@ export default class Ball {
     while (this.vy === 0) {
       this.vy = Math.floor(Math.random() * 10 - 5);
     }
-
-    // this.vx = 6 - 5;
     this.vx = this.direction * (6 - Math.abs(this.vy));
   }
 
@@ -39,7 +35,7 @@ export default class Ball {
     } else if (hitRight) {
       this.direction = 1;
       this.goal(paddle1);
-      
+
     } else if (hitTop || hitBottom) {
       this.vy = -this.vy;
     }
@@ -48,7 +44,7 @@ export default class Ball {
 
   paddleCollision(paddle1, paddle2) {
     if (this.vx > 0) {
-      
+
       let paddle = paddle2.coordinates(paddle2.x, paddle2.y, paddle2.width, paddle2.height);
       let { leftX, topY, bottomY } = paddle;
       if (
@@ -83,7 +79,7 @@ export default class Ball {
   render(svg, paddle1, paddle2) {
     this.x += this.vx;
     this.y += this.vy;
-    this.wallCollsion(paddle1,paddle2);
+    this.wallCollsion(paddle1, paddle2);
     this.paddleCollision(paddle1, paddle2);
     let ball = document.createElementNS(SVG_NS, 'circle');
     ball.setAttributeNS(null, 'r', this.radius);
