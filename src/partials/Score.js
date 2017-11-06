@@ -19,5 +19,3 @@ export default class Score {
   }
 }
 
-
-{/* <text x="256" y="126" font-family text-color>0</text> */ }

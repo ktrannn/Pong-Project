@@ -1,4 +1,4 @@
-import { SVG_NS } from '../settings.js';
+import { SVG_NS, KEYS } from '../settings.js';
 
 export default class Paddle {
 
@@ -20,16 +20,38 @@ export default class Paddle {
         case down:
           this.down();
           break;
+        case KEYS.m:
+          this.bigSize();
+          break;
+        case KEYS.n:
+          this.smallSize();
+          break;
       }
     });
   }
 
-  coordinates(x, y, width, height) {
-    let leftX = x;
-    let rightX = x + width;
-    let topY = y;
-    let bottomY = y + height;
-    return { leftX, rightX, topY, bottomY };
+  bigSize() {
+    if (this.height === 56) {
+      this.height = 100;
+      this.speed = 3;
+      this.width = 8;
+    } else {
+      this.height = 56;
+      this.speed = 10;
+      this.width = 8;
+    }
+  }
+
+  smallSize() {
+    if (this.height === 56) {
+      this.height = 30;
+      this.speed = 30;
+      this.width = 2;
+    } else {
+      this.height = 56;
+      this.speed = 10;
+      this.width = 8;
+    }
   }
 
   up() {
@@ -38,6 +60,15 @@ export default class Paddle {
 
   down() {
     this.y = Math.min(this.y + this.speed, this.boardHeight - this.height);
+  }
+
+
+  coordinates(x, y, width, height) {
+    let leftX = x;
+    let rightX = x + width;
+    let topY = y;
+    let bottomY = y + height;
+    return { leftX, rightX, topY, bottomY };
   }
 
 

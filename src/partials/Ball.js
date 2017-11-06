@@ -9,6 +9,7 @@ export default class Ball {
     this.direction = 1;
     this.ping = new Audio('public/sounds/pong-01.wav');
     this.reset();
+
   }
 
   reset() {
@@ -75,7 +76,7 @@ export default class Ball {
     this.reset();
   }
 
-
+  
   render(svg, paddle1, paddle2) {
     this.x += this.vx;
     this.y += this.vy;

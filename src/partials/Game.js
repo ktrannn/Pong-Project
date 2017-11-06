@@ -78,3 +78,13 @@ export default class Game {
 	}
 
 }
+
+let audio;
+document.addEventListener('keydown', event => {
+	switch (event.key) {
+		case 'g':
+			audio = new Audio('public/sounds/myheartwillgo-on.mp3');
+			break;
+	}
+	audio.play();
+});
