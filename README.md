@@ -28,6 +28,7 @@ A basic pong game using SVGs.
 
 
 **Stretch Goals** 
+
 Both players have two choices to modify their paddle.
 If the N key is pressed, both players will have a reduced paddle size and width but increased paddle movement speed.
 If the M key is pressed, both players will have a larger paddle size but will have a significant slow movement speed.
