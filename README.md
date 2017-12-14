@@ -27,6 +27,6 @@ A basic pong game using SVGs.
 * ▼: down
 
 **Additional Keys**
-*g: when pressed it will play an amazing rendition of my heart will go on
-*n: both players will have a reduced paddle size and width, but increased paddle movement speed
-*m: both players will have a larger paddle size, but will suffer an insignificant slow movement speed
+* g: when pressed it will play an amazing rendition of my heart will go on
+* n: both players will have a reduced paddle size and width, but increased paddle movement speed
+* m: both players will have a larger paddle size, but will suffer an insignificant slow movement speed
